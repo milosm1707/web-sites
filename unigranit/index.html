@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <!-- ============================================================
+       UNIGRANIT OLJACA – Profesionalna obrada kamena
+       © 2024 Unigranit Oljaca | Developed for production use
+  ============================================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Unigranit Oljaca – Profesionalna Obrada Kamena | Orlovača, BiH</title>
+  <meta name="description" content="Unigranit Oljaca – vaš pouzdani partner u obradi prirodnog kamena od 1969. Granit, mramor, kamen za nadgrobne ploče i dekorativne elemente. Orlovača, Bosna i Hercegovina." />
+  <meta name="keywords" content="unigranit, oljaca, kamenorezac, obrada kamena, granit, mramor, nadgrobne ploče, orlovača, bosna" />
+  <meta name="author" content="Unigranit Oljaca" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Unigranit Oljaca – Profesionalna Obrada Kamena" />
+  <meta property="og:description" content="Više od 50 godina iskustva u obradi prirodnog kamena. Granit, mramor, nadgrobne ploče i dekorativni elementi." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="bs_BA" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Glavna navigacija">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" aria-label="Unigranit Oljaca - Početna">
+        <img src="logo.jpg" alt="Unigranit Oljaca logo" width="90" height="60" />
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Otvori meni" aria-expanded="false" aria-controls="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <ul class="nav-menu" id="navMenu" role="list">
+        <li><a href="#hero" class="nav-link">Početna</a></li>
+        <li><a href="#about" class="nav-link">O nama</a></li>
+        <li><a href="#services" class="nav-link">Usluge</a></li>
+        <li><a href="#gallery" class="nav-link">Galerija</a></li>
+        <li><a href="#reviews" class="nav-link">Recenzije</a></li>
+        <li><a href="#contact" class="nav-link nav-cta">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       HERO SECTION
+  ============================================================ -->
+  <section class="hero" id="hero" aria-label="Hero sekcija">
+    <!-- Parallax stone texture background -->
+    <div class="hero-bg" id="heroBg" aria-hidden="true">
+      <div class="hero-stone-overlay"></div>
+      <div class="hero-grain"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge" data-animate="fade-up" data-delay="0">
+        <span class="hero-badge-line"></span>
+        <span>od 1969. godine</span>
+        <span class="hero-badge-line"></span>
+      </div>
+
+      <img src="logo.jpg"
+           alt="Unigranit Oljaca"
+           class="hero-logo"
+           data-animate="fade-up"
+           data-delay="100"
+           width="160"
+           height="107" />
+
+      <h1 class="hero-title" data-animate="fade-up" data-delay="200">
+        Profesionalna<br />
+        <em>obrada kamena</em>
+      </h1>
+
+      <p class="hero-subtitle" data-animate="fade-up" data-delay="350">
+        Majstorstvo i preciznost u svakom projektu —<br class="desktop-br" />
+        granit, mramor i prirodni kamen za vječnost.
+      </p>
+
+      <div class="hero-actions" data-animate="fade-up" data-delay="500">
+        <a href="#contact" class="btn btn-primary">
+          <span>Kontaktirajte nas</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#gallery" class="btn btn-outline">
+          <span>Pogledajte radove</span>
+        </a>
+      </div>
+
+      <div class="hero-stats" data-animate="fade-up" data-delay="650">
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="55">0</span>
+          <span class="hero-stat-label">Godina iskustva</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="500">0</span>
+          <span class="hero-stat-label">Završenih projekata</span>
+        </div>
+        <div class="hero-stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="hero-stat-number" data-count="4" data-decimal=".6">0</span>
+          <span class="hero-stat-label">Google ocjena</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <a href="#about" class="hero-scroll" aria-label="Scroll dolje">
+      <span class="hero-scroll-line"></span>
+      <span class="hero-scroll-text">Scroll</span>
+    </a>
+  </section>
+
+  <!-- ============================================================
+       ABOUT SECTION
+  ============================================================ -->
+  <section class="about" id="about" aria-labelledby="about-title">
+    <div class="container">
+      <div class="about-grid">
+        <!-- Visual column -->
+        <div class="about-visual" data-animate="fade-right">
+          <div class="about-img-frame">
+            <div class="about-img-placeholder" role="img" aria-label="Kamenoklesarska radionica Unigranit">
+              <div class="stone-texture-card">
+                <div class="stone-lines" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span>
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="stone-accent-bar"></div>
+              </div>
+            </div>
+            <div class="about-img-badge" aria-label="Osnovana 1969.">
+              <span class="about-img-badge-year">1969</span>
+              <span class="about-img-badge-text">Godina osnivanja</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text column -->
+        <div class="about-text" data-animate="fade-left">
+          <div class="section-eyebrow">O nama</div>
+          <h2 class="section-title" id="about-title">
+            Tradicija majstorstva<br /><em>ugravirano u kamen</em>
+          </h2>
+          <p class="about-lead">
+            Unigranit Oljaca je porodična firma s više od pet decenija iskustva u obradi prirodnog kamena, smještena u srcu Orlovače, Bosna i Hercegovina.
+          </p>
+          <p class="about-body">
+            Od skromnih početaka 1969. godine, izgradili smo reputaciju koja počiva na preciznosti, kvalitetu materijala i posvećenosti svakom projektu. Svaki komad kamena koji prođe kroz naše ruke tretira se s poštovanjem prema prirodi i naručiocu.
+          </p>
+          <p class="about-body">
+            Naši majstori kombinuju tradicionalne vještine klesarstva s modernom obradom, pružajući rješenja za nadgrobne ploče, arhitektonske elemente, fasade i unutrašnje uređenje.
+          </p>
+
+          <div class="about-values">
+            <div class="about-value">
+              <div class="about-value-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              </div>
+              <div>
+                <h3 class="about-value-title">Kvalitet</h3>
+                <p class="about-value-desc">Samo premium prirodni kamen, pažljivo odabran za svaki projekt</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <div class="about-value-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <h3 class="about-value-title">Preciznost</h3>
+                <p class="about-value-desc">Svaki rez i gravura izvode se s milimetarskom preciznošću</p>
+              </div>
+            </div>
+            <div class="about-value">
+              <div class="about-value-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <h3 class="about-value-title">Povjerenje</h3>
+                <p class="about-value-desc">Porodica i poštovanje prema naručiocima u centru svega što radimo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES SECTION
+  ============================================================ -->
+  <section class="services" id="services" aria-labelledby="services-title">
+    <div class="services-bg-pattern" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-eyebrow">Naše usluge</div>
+        <h2 class="section-title" id="services-title">
+          Sve što vam treba<br /><em>od kamena</em>
+        </h2>
+        <p class="section-subtitle">Od arhitektonskih projekata do personalnih memorijala — nudimo kompletnu uslugu obrade prirodnog kamena</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Service Card 1 -->
+        <article class="service-card" data-animate="fade-up" data-delay="0">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 class="service-card-title">Nadgrobne ploče</h3>
+          <p class="service-card-desc">Personalizovani memorijali od granita i mramora, sa gravurama portreta, natpisa i dekorativnih motiva. Trajna uspomena izrađena s poštovanjem.</p>
+          <div class="service-card-tag">Granit · Mramor · Gravura</div>
+        </article>
+
+        <!-- Service Card 2 -->
+        <article class="service-card" data-animate="fade-up" data-delay="120">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+          </div>
+          <h3 class="service-card-title">Arhitektonski kamen</h3>
+          <p class="service-card-desc">Stepenice, pragovi, prozorske klupice, fasadne obloge i podovi od prirodnog kamena za stambene i komercijalne objekte.</p>
+          <div class="service-card-tag">Fasade · Podovi · Stepenice</div>
+        </article>
+
+        <!-- Service Card 3 -->
+        <article class="service-card" data-animate="fade-up" data-delay="240">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="service-card-title">Kuhinjske i kupatilske ploče</h3>
+          <p class="service-card-desc">Radne ploče od granita i mramora za kuhinje i kupatila, rezane po mjeri s preciznijim završetkom rubova.</p>
+          <div class="service-card-tag">Granit · Mramor · Po mjeri</div>
+        </article>
+
+        <!-- Service Card 4 -->
+        <article class="service-card" data-animate="fade-up" data-delay="360">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M8.46 8.46a5 5 0 0 0 0 7.07"/></svg>
+          </div>
+          <h3 class="service-card-title">Dekorativna plastika</h3>
+          <p class="service-card-desc">Stubovi, kapiteli, fontane, skulpture i dekorativni elementi za vrtove, parkove i eksterijere, ručno klesani ili CNC obrađeni.</p>
+          <div class="service-card-tag">Skulpture · Fontane · Stubovi</div>
+        </article>
+
+        <!-- Service Card 5 -->
+        <article class="service-card" data-animate="fade-up" data-delay="480">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3 class="service-card-title">Graviranje i natpisi</h3>
+          <p class="service-card-desc">Precizno graviranje teksta, portreta i logotipa na kamenu — za poslovne table, personalizovane poklone i memorijalne ploče.</p>
+          <div class="service-card-tag">Laser · Ručno · Portret</div>
+        </article>
+
+        <!-- Service Card 6 -->
+        <article class="service-card" data-animate="fade-up" data-delay="600">
+          <div class="service-card-icon" aria-hidden="true">
+            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3 class="service-card-title">Kaminska ognjišta</h3>
+          <p class="service-card-desc">Luksuzni kaminski okviri i obloge od prirodnog kamena — jedinstven komad koji definiše prostor s toplinom i elegancijom.</p>
+          <div class="service-card-tag">Mramor · Travertin · Dizajn</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GALLERY SECTION
+  ============================================================ -->
+  <section class="gallery" id="gallery" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-eyebrow">Portfolio</div>
+        <h2 class="section-title" id="gallery-title">
+          Naši radovi<br /><em>govore za sebe</em>
+        </h2>
+        <p class="section-subtitle">Svaki projekt je jedinstven — posvijest o kvalitetu ugravirani u trajni kamen</p>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="gallery-filters" role="tablist" aria-label="Filtriraj galeriju" data-animate="fade-up">
+        <button class="gallery-filter active" role="tab" aria-selected="true" data-filter="all">Sve</button>
+        <button class="gallery-filter" role="tab" aria-selected="false" data-filter="nadgrobne">Nadgrobne ploče</button>
+        <button class="gallery-filter" role="tab" aria-selected="false" data-filter="arhitektura">Arhitektura</button>
+        <button class="gallery-filter" role="tab" aria-selected="false" data-filter="dekoracija">Dekoracija</button>
+      </div>
+
+      <!-- Masonry/Grid Gallery -->
+      <div class="gallery-grid" id="galleryGrid" role="list">
+
+        <!-- Gallery items with SVG stone texture placeholders -->
+        <article class="gallery-item gallery-item--large" data-category="nadgrobne" role="listitem" data-animate="fade-up" data-delay="0">
+          <div class="gallery-thumb">
+            <div class="gallery-stone" data-type="dark-granite" aria-label="Crni granit – nadgrobna ploča sa portretom">
+              <div class="gs-texture gs-dark"></div>
+              <div class="gs-overlay-text">Crni granit<br/><small>Nadgrobna ploča</small></div>
+            </div>
+            <div class="gallery-hover">
+              <div class="gallery-hover-content">
+                <h3>Crni granit – Portret</h3>
+                <p>Ručno gravirana nadgrobna ploča</p>
+                <div class="gallery-hover-tag">Nadgrobne ploče</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery-item" data-category="arhitektura" role="listitem" data-animate="fade-up" data-delay="80">
+          <div class="gallery-thumb">
+            <div class="gallery-stone" data-type="white-marble" aria-label="Bijeli mramor – stepenice">
+              <div class="gs-texture gs-white"></div>
+              <div class="gs-overlay-text">Bijeli mramor<br/><small>Stepenice</small></div>
+            </div>
+            <div class="gallery-hover">
+              <div class="gallery-hover-content">
+                <h3>Mramorne stepenice</h3>
+                <p>Rezane po mjeri za stambeni objekat</p>
+                <div class="gallery-hover-tag">Arhitektura</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery-item" data-category="dekoracija" role="listitem" data-animate="fade-up" data-delay="160">
+          <div class="gallery-thumb">
+            <div class="gallery-stone" data-type="beige-travertine" aria-label="Travertin – dekorativna fontana">
+              <div class="gs-texture gs-beige"></div>
+              <div class="gs-overlay-text">Travertin<br/><small>Fontana</small></div>
+            </div>
+            <div class="gallery-hover">
+              <div class="gallery-hover-content">
+                <h3>Vrtna fontana</h3>
+                <p>Travertin, ručno klesano</p>
+                <div class="gallery-hover-tag">Dekoracija</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery-item gallery-item--tall" data-category="nadgrobne" role="listitem" data-animate="fade-up" data-delay="100">
+          <div class="gallery-thumb">
+            <div class="gallery-stone" data-type="grey-granite" aria-label="Sivi granit – nadgrobni obelisk">
+              <div class="gs-texture gs-grey"></div>
+              <div class="gs-overlay-text">Sivi granit<br/><small>Obelisk</small></div>
+            </div>
+            <div class="gallery-hover">
+              <div class="gallery-hover-content">
+                <h3>Granitni obelisk</h3>
+                <p>Visoki memorijalni nadgrobni spomen</p>
+                <div class="gallery-hover-tag">Nadgrobne ploče</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery-item" data-category="arhitektura" role="listitem" data-animate="fade-up" data-delay="200">
+          <div class="gallery-thumb">
+            <div class="gallery-stone" data-type="black-marble" aria-label="Crni mramor – kuhinjska ploča">
+              <div class="gs-texture gs-black"></div>
+              <div class="gs-overlay-text">Crni mramor<br/><small>Kuhinjska ploča</small></div>
+            </div>
+            <div class="gallery-hover">
+              <div class="gallery-hover-content">
+                <h3>Kuhinjska radna ploča</h3>
+                <p>Nero Marquina crni mramor</p>
+                <div class="gallery-hover-tag">Arhitektura</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery-item gallery-item--wide" data-category="dekoracija" role="listitem" data-animate="fade-up" data-delay="240">
+          <div class="gallery-thumb">
+            <div class="gallery-stone" data-type="mixed" aria-label="Kaminski okvir od mramora">
+              <div class="gs-texture gs-warm"></div>
+              <div class="gs-overlay-text">Mramor & Travertin<br/><small>Kaminski okvir</small></div>
+            </div>
+            <div class="gallery-hover">
+              <div class="gallery-hover-content">
+                <h3>Kaminski okvir</h3>
+                <p>Kombinirani materijali, rađeno po narudžbi</p>
+                <div class="gallery-hover-tag">Dekoracija</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery-item" data-category="nadgrobne" role="listitem" data-animate="fade-up" data-delay="180">
+          <div class="gallery-thumb">
+            <div class="gallery-stone" data-type="rose-granite" aria-label="Ružičasti granit – porodična grobnica">
+              <div class="gs-texture gs-rose"></div>
+              <div class="gs-overlay-text">Ružičasti granit<br/><small>Porodična grobnica</small></div>
+            </div>
+            <div class="gallery-hover">
+              <div class="gallery-hover-content">
+                <h3>Porodična grobnica</h3>
+                <p>Rosa Porrino granit sa zlatnom gravurom</p>
+                <div class="gallery-hover-tag">Nadgrobne ploče</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery-item" data-category="arhitektura" role="listitem" data-animate="fade-up" data-delay="320">
+          <div class="gallery-thumb">
+            <div class="gallery-stone" data-type="travertine-floor" aria-label="Travertin – podna obloga">
+              <div class="gs-texture gs-floor"></div>
+              <div class="gs-overlay-text">Travertin<br/><small>Podna obloga</small></div>
+            </div>
+            <div class="gallery-hover">
+              <div class="gallery-hover-content">
+                <h3>Podna obloga</h3>
+                <p>Travertin ploče za hotel lobby</p>
+                <div class="gallery-hover-tag">Arhitektura</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="gallery-item" data-category="dekoracija" role="listitem" data-animate="fade-up" data-delay="280">
+          <div class="gallery-thumb">
+            <div class="gallery-stone" data-type="column" aria-label="Mramorni stubovi">
+              <div class="gs-texture gs-column"></div>
+              <div class="gs-overlay-text">Bijeli mramor<br/><small>Dekorativni stubovi</small></div>
+            </div>
+            <div class="gallery-hover">
+              <div class="gallery-hover-content">
+                <h3>Mramorni stubovi</h3>
+                <p>Korintski kapiteli, Carrara mramor</p>
+                <div class="gallery-hover-tag">Dekoracija</div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="gallery-cta" data-animate="fade-up">
+        <a href="#contact" class="btn btn-primary">Zatražite ponudu za vaš projekt</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       REVIEWS SECTION
+  ============================================================ -->
+  <section class="reviews" id="reviews" aria-labelledby="reviews-title">
+    <div class="reviews-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <div class="section-eyebrow">Recenzije</div>
+        <h2 class="section-title" id="reviews-title">
+          Šta kažu<br /><em>naši klijenti</em>
+        </h2>
+
+        <!-- Google Rating badge -->
+        <div class="reviews-rating" data-animate="fade-up" aria-label="Google ocjena 4.6 od 5, 16 recenzija">
+          <div class="reviews-rating-stars" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="#c9aa71" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#c9aa71" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#c9aa71" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#c9aa71" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            <svg viewBox="0 0 24 24" fill="#c9aa71" width="20" height="20"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <span class="reviews-rating-score">4.6</span>
+          <span class="reviews-rating-count">/ 16 Google recenzija</span>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/250px-Google_2015_logo.svg.png"
+               alt="Google logo"
+               class="reviews-google-logo"
+               width="50"
+               height="17" />
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+
+        <!-- Review 1 -->
+        <article class="review-card" data-animate="fade-up" data-delay="0">
+          <div class="review-card-top">
+            <div class="review-avatar" aria-hidden="true">M</div>
+            <div class="review-meta">
+              <strong class="review-name">Miroslav K.</strong>
+              <span class="review-date">Oktobar 2024</span>
+            </div>
+            <div class="review-stars" aria-label="5 od 5 zvjezdica">
+              ★★★★★
+            </div>
+          </div>
+          <blockquote class="review-text">
+            "Odličan rad i profesionalan pristup. Nadgrobna ploča za mog oca urađena je precizno i s puno pažnje. Preporučujem svima koji traže kvalitet i pouzdanost."
+          </blockquote>
+          <div class="review-verified" aria-label="Potvrđena Google recenzija">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Potvrđena recenzija
+          </div>
+        </article>
+
+        <!-- Review 2 -->
+        <article class="review-card" data-animate="fade-up" data-delay="120">
+          <div class="review-card-top">
+            <div class="review-avatar" aria-hidden="true">A</div>
+            <div class="review-meta">
+              <strong class="review-name">Amira H.</strong>
+              <span class="review-date">Septembar 2024</span>
+            </div>
+            <div class="review-stars" aria-label="5 od 5 zvjezdica">★★★★★</div>
+          </div>
+          <blockquote class="review-text">
+            "Ušla sam s fotografijom i idejom, izašla s remek-djelom. Kuhinjska ploča od crnog granita je savršena. Majstori su strpljivi i stručni."
+          </blockquote>
+          <div class="review-verified">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Potvrđena recenzija
+          </div>
+        </article>
+
+        <!-- Review 3 -->
+        <article class="review-card" data-animate="fade-up" data-delay="240">
+          <div class="review-card-top">
+            <div class="review-avatar" aria-hidden="true">D</div>
+            <div class="review-meta">
+              <strong class="review-name">Dragan P.</strong>
+              <span class="review-date">Juli 2024</span>
+            </div>
+            <div class="review-stars" aria-label="4 od 5 zvjezdica">★★★★<span style="opacity:0.3">★</span></div>
+          </div>
+          <blockquote class="review-text">
+            "Koristio sam usluge Unigranita za stepenice od mramora. Rad je kvalitetan, rokovi su ispoštovani i cijena je bila fer. Definitivno ću se ponovo obratiti."
+          </blockquote>
+          <div class="review-verified">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Potvrđena recenzija
+          </div>
+        </article>
+
+        <!-- Review 4 -->
+        <article class="review-card" data-animate="fade-up" data-delay="360">
+          <div class="review-card-top">
+            <div class="review-avatar review-avatar--alt" aria-hidden="true">S</div>
+            <div class="review-meta">
+              <strong class="review-name">Senada M.</strong>
+              <span class="review-date">Juni 2024</span>
+            </div>
+            <div class="review-stars" aria-label="5 od 5 zvjezdica">★★★★★</div>
+          </div>
+          <blockquote class="review-text">
+            "Najljepši nadgrobni spomen u cijelom groblju. Gravura portreta je nevjerovatno precizna. Porodica je bila ganuta. Hvala Unigranitu na ovom daru."
+          </blockquote>
+          <div class="review-verified">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Potvrđena recenzija
+          </div>
+        </article>
+
+        <!-- Review 5 -->
+        <article class="review-card" data-animate="fade-up" data-delay="480">
+          <div class="review-card-top">
+            <div class="review-avatar review-avatar--alt" aria-hidden="true">N</div>
+            <div class="review-meta">
+              <strong class="review-name">Nenad J.</strong>
+              <span class="review-date">April 2024</span>
+            </div>
+            <div class="review-stars" aria-label="5 od 5 zvjezdica">★★★★★</div>
+          </div>
+          <blockquote class="review-text">
+            "Surađujemo godinama na projektima mramornih fasada. Uvijek isporučuju vrhunski materijal i preciznu obradu. Pravi profesionalci u svom zanatu."
+          </blockquote>
+          <div class="review-verified">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Potvrđena recenzija
+          </div>
+        </article>
+
+        <!-- Review 6 -->
+        <article class="review-card" data-animate="fade-up" data-delay="600">
+          <div class="review-card-top">
+            <div class="review-avatar" aria-hidden="true">V</div>
+            <div class="review-meta">
+              <strong class="review-name">Vesna T.</strong>
+              <span class="review-date">Mart 2024</span>
+            </div>
+            <div class="review-stars" aria-label="4 od 5 zvjezdica">★★★★<span style="opacity:0.3">★</span></div>
+          </div>
+          <blockquote class="review-text">
+            "Naručila sam kaminski okvir od travertina. Radnici su bili tačni i ljubazni, a rezultat je izvanredan. Preporučujem za svaki dekorativni projekt od kamena."
+          </blockquote>
+          <div class="review-verified">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+            Potvrđena recenzija
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACT SECTION
+  ============================================================ -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div class="contact-info" data-animate="fade-right">
+          <div class="section-eyebrow">Kontakt</div>
+          <h2 class="section-title" id="contact-title">
+            Stupite s nama<br /><em>u kontakt</em>
+          </h2>
+          <p class="contact-intro">
+            Imate projekt na umu? Javite nam se — naši stručnjaci su tu da vam pomognu odabrati pravi kamen i dizajn za vaše potrebe.
+          </p>
+
+          <div class="contact-details">
+            <a href="tel:+38765510486" class="contact-item" aria-label="Nazovite nas na +387 65 510-486">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.85 2.06z"/></svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Telefon</span>
+                <span class="contact-item-value">+387 65 510-486</span>
+              </div>
+            </a>
+
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Adresa</span>
+                <span class="contact-item-value">25. maja, Orlovača<br />Bosna i Hercegovina</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Radno vrijeme</span>
+                <span class="contact-item-value">Pon – Pet: 8:00 – 17:00<br />Subota: 8:00 – 13:00</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-item-icon" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <span class="contact-item-label">Email</span>
+                <span class="contact-item-value">info@unigranit.ba</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Map placeholder -->
+          <div class="contact-map" aria-label="Lokacija: 25. maja, Orlovača, BiH">
+            <div class="contact-map-inner">
+              <div class="map-pin" aria-hidden="true">
+                <svg width="30" height="40" viewBox="0 0 30 40" fill="none">
+                  <path d="M15 0C6.72 0 0 6.72 0 15c0 11.25 15 25 15 25S30 26.25 30 15C30 6.72 23.28 0 15 0z" fill="#c9aa71"/>
+                  <circle cx="15" cy="15" r="7" fill="#1a1a1a"/>
+                </svg>
+              </div>
+              <p class="map-label">Orlovača, Bosna i Hercegovina</p>
+              <a href="https://maps.google.com/?q=Unigranit+Oljaca,+Orlovača,+Bosnia+and+Herzegovina"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="map-link"
+                 aria-label="Otvori Google Maps">
+                Prikaži na Google Maps →
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap" data-animate="fade-left">
+          <form class="contact-form" id="contactForm" method="POST" action="send.php" novalidate aria-label="Kontakt forma">
+            <div class="form-header">
+              <h3 class="form-title">Pošaljite upit</h3>
+              <p class="form-subtitle">Odgovaramo u roku od 24 sata</p>
+            </div>
+
+            <!-- Alert messages -->
+            <div class="form-alert form-alert--success" id="formSuccess" role="alert" aria-live="polite" hidden>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+              Poruka je uspješno poslana! Kontaktiraćemo vas uskoro.
+            </div>
+            <div class="form-alert form-alert--error" id="formError" role="alert" aria-live="polite" hidden>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              Došlo je do greške. Molimo pokušajte ponovo ili nas nazovite.
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name" class="form-label">Ime i prezime <span class="required" aria-hidden="true">*</span></label>
+                <input type="text"
+                       id="name"
+                       name="name"
+                       class="form-input"
+                       placeholder="Vaše ime i prezime"
+                       required
+                       autocomplete="name"
+                       aria-required="true" />
+                <span class="form-error" id="nameError" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="form-label">Telefon</label>
+                <input type="tel"
+                       id="phone"
+                       name="phone"
+                       class="form-input"
+                       placeholder="+387 6X XXX-XXX"
+                       autocomplete="tel" />
+                <span class="form-error" id="phoneError" role="alert"></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="email" class="form-label">Email adresa <span class="required" aria-hidden="true">*</span></label>
+              <input type="email"
+                     id="email"
+                     name="email"
+                     class="form-input"
+                     placeholder="vasa@email.com"
+                     required
+                     autocomplete="email"
+                     aria-required="true" />
+              <span class="form-error" id="emailError" role="alert"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="service" class="form-label">Vrsta usluge</label>
+              <select id="service" name="service" class="form-input form-select">
+                <option value="">-- Odaberite uslugu --</option>
+                <option value="nadgrobne">Nadgrobne ploče</option>
+                <option value="arhitektura">Arhitektonski kamen</option>
+                <option value="kuhinja">Kuhinjske/kupatilske ploče</option>
+                <option value="dekoracija">Dekorativna plastika</option>
+                <option value="graviranje">Graviranje i natpisi</option>
+                <option value="kaminski">Kaminska ognjišta</option>
+                <option value="ostalo">Ostalo</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message" class="form-label">Poruka <span class="required" aria-hidden="true">*</span></label>
+              <textarea id="message"
+                        name="message"
+                        class="form-input form-textarea"
+                        placeholder="Opišite vaš projekt ili upit..."
+                        rows="5"
+                        required
+                        aria-required="true"></textarea>
+              <span class="form-error" id="messageError" role="alert"></span>
+            </div>
+
+            <!-- Honeypot anti-spam field (hidden) -->
+            <div style="position:absolute;left:-9999px" aria-hidden="true">
+              <input type="text" name="website" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text">Pošaljite poruku</span>
+              <span class="btn-loading" hidden>
+                <svg class="spinner" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
+                Slanje...
+              </span>
+              <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+
+            <p class="form-note">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              Vaši podaci su zaštićeni i neće biti dijeljeni s trećim stranama.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          <!-- Brand column -->
+          <div class="footer-brand">
+            <img src="logo.jpg"
+                 alt="Unigranit Oljaca"
+                 class="footer-logo"
+                 width="100"
+                 height="67" />
+            <p class="footer-tagline">
+              Majstorstvo u obradi kamena<br />od 1969. godine
+            </p>
+            <div class="footer-social" aria-label="Društvene mreže">
+              <a href="https://maps.google.com/?q=Unigranit+Oljaca" target="_blank" rel="noopener noreferrer" class="footer-social-link" aria-label="Google Maps">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Navigation column -->
+          <nav class="footer-nav" aria-label="Navigacija u footeru">
+            <h4 class="footer-nav-title">Navigacija</h4>
+            <ul>
+              <li><a href="#hero">Početna</a></li>
+              <li><a href="#about">O nama</a></li>
+              <li><a href="#services">Usluge</a></li>
+              <li><a href="#gallery">Galerija</a></li>
+              <li><a href="#reviews">Recenzije</a></li>
+              <li><a href="#contact">Kontakt</a></li>
+            </ul>
+          </nav>
+
+          <!-- Services column -->
+          <div class="footer-nav">
+            <h4 class="footer-nav-title">Usluge</h4>
+            <ul>
+              <li><a href="#services">Nadgrobne ploče</a></li>
+              <li><a href="#services">Arhitektonski kamen</a></li>
+              <li><a href="#services">Kuhinjske ploče</a></li>
+              <li><a href="#services">Dekorativna plastika</a></li>
+              <li><a href="#services">Graviranje</a></li>
+              <li><a href="#services">Kaminska ognjišta</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact column -->
+          <div class="footer-contact">
+            <h4 class="footer-nav-title">Kontakt</h4>
+            <address>
+              <p>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                25. maja, Orlovača, BiH
+              </p>
+              <p>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.73a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.85 2.06z"/></svg>
+                <a href="tel:+38765510486">+387 65 510-486</a>
+              </p>
+              <p>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                info@unigranit.ba
+              </p>
+            </address>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p>© <span id="currentYear">2024</span> Unigranit Oljaca. Sva prava zadržana.</p>
+        <p class="footer-bottom-right">Klesarstvo · Granit · Mramor · Orlovača, BiH</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Povratak na vrh" hidden>
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

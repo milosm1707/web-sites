@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZP Trade – Vaš pouzdan partner u poljoprivredi</title>
+  <meta name="description" content="ZP Trade – prodaja gnojiva, sjemena, pesticida, opreme za navodnjavanje, stočne hrane i poljoprivredne mehanizacije.">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== HERO ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: var(--green-dark);
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: 
+        linear-gradient(135deg, rgba(26,58,31,0.92) 0%, rgba(45,106,53,0.75) 60%, rgba(26,58,31,0.85) 100%),
+        url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1600&q=80') center/cover no-repeat;
+      will-change: transform;
+    }
+
+    .hero-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    .hero-shape {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(245,197,24,0.08);
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .hero-shape:nth-child(1) { width: 400px; height: 400px; top: -100px; right: -100px; animation-delay: 0s; }
+    .hero-shape:nth-child(2) { width: 250px; height: 250px; bottom: 100px; right: 200px; animation-delay: 3s; }
+    .hero-shape:nth-child(3) { width: 180px; height: 180px; top: 200px; right: 400px; animation-delay: 1.5s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-20px) scale(1.05); }
+    }
+
+    .hero-content {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 2rem 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-left { animation: heroIn 0.8s ease both; }
+
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(245,197,24,0.15);
+      border: 1px solid rgba(245,197,24,0.3);
+      color: var(--yellow);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 8px 18px;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before { content: '🌱'; font-size: 1rem; }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--yellow);
+    }
+
+    .hero-desc {
+      font-size: 1.1rem;
+      color: rgba(255,255,255,0.75);
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .hero-stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--yellow);
+      line-height: 1;
+    }
+
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 4px;
+    }
+
+    .hero-right {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      animation: heroIn 0.8s 0.2s ease both;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      transition: all 0.3s;
+    }
+
+    .hero-card:hover {
+      background: rgba(255,255,255,0.14);
+      transform: translateY(-4px);
+    }
+
+    .hero-card:nth-child(1) { grid-column: span 2; display: flex; align-items: center; gap: 1rem; }
+
+    .hero-card-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .hero-card-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .hero-card-value {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    /* ===== MARQUEE ===== */
+    .marquee-section {
+      background: var(--yellow);
+      padding: 1rem 0;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      gap: 3rem;
+      animation: marquee 20s linear infinite;
+      white-space: nowrap;
+    }
+
+    .marquee-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+
+    .marquee-dot { width: 6px; height: 6px; background: var(--green-mid); border-radius: 50%; }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ===== PRODUCTS OVERVIEW ===== */
+    .products-section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3rem;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .product-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      border: 2px solid transparent;
+      transition: all 0.35s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--green-light), var(--yellow));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover {
+      border-color: var(--green-light);
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .product-card:hover::before { transform: scaleX(1); }
+
+    .product-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+      transition: transform 0.3s;
+    }
+
+    .product-card:hover .product-icon { transform: scale(1.15); }
+
+    .product-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .product-desc {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* ===== WHY US ===== */
+    .why-section {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M40 0C17.9 0 0 17.9 0 40s17.9 40 40 40 40-17.9 40-40S62.1 0 40 0zm0 70C23.4 70 10 56.6 10 40S23.4 10 40 10s30 13.4 30 30-13.4 30-30 30z'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .why-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .why-header {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+
+    .why-header .section-label {
+      background: rgba(255,255,255,0.1);
+      color: var(--yellow);
+    }
+
+    .why-header .section-title { color: var(--white); }
+
+    .why-header .section-subtitle { color: rgba(255,255,255,0.65); margin: 0 auto; }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+
+    .why-card {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: all 0.3s;
+    }
+
+    .why-card:hover {
+      background: rgba(255,255,255,0.12);
+      transform: translateY(-4px);
+    }
+
+    .why-icon {
+      width: 72px; height: 72px;
+      background: linear-gradient(135deg, var(--yellow), var(--yellow-dark));
+      border-radius: 18px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2rem;
+      margin: 0 auto 1.5rem;
+      box-shadow: 0 8px 24px rgba(245,197,24,0.3);
+    }
+
+    .why-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 0.75rem;
+    }
+
+    .why-text {
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    /* ===== ABOUT TEASER ===== */
+    .about-section {
+      padding: 6rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .about-image-wrap {
+      position: relative;
+    }
+
+    .about-img-main {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .about-img-badge {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      background: var(--yellow);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .about-img-badge .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--green-dark);
+      line-height: 1;
+    }
+
+    .about-img-badge .lbl {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green-dark);
+      opacity: 0.7;
+    }
+
+    .about-points {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .about-point {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+    }
+
+    .about-point::before {
+      content: '✓';
+      width: 28px; height: 28px;
+      background: var(--green-pale);
+      color: var(--green-mid);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      background: var(--cream);
+      padding: 6rem 2rem;
+    }
+
+    .cta-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      border-radius: 2rem;
+      padding: 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-inner::before {
+      content: '🌾';
+      position: absolute;
+      font-size: 12rem;
+      opacity: 0.05;
+      right: -2rem;
+      bottom: -2rem;
+    }
+
+    .cta-inner .section-label {
+      background: rgba(255,255,255,0.1);
+      color: var(--yellow);
+    }
+
+    .cta-inner .section-title {
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .cta-inner p {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+    }
+
+    .cta-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content { grid-template-columns: 1fr; gap: 2rem; padding-top: 100px; }
+      .hero-right { display: none; }
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-section { grid-template-columns: 1fr; gap: 3rem; }
+      .about-img-badge { right: 0; }
+      .hero-stats { gap: 1.5rem; }
+      .cta-inner { padding: 2.5rem 1.5rem; }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🌿</div>
+    <span class="nav-logo-text">ZP <span>Trade</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html" class="active">Početna</a></li>
+    <li><a href="products.html">Proizvodi</a></li>
+    <li><a href="about.html">O nama</a></li>
+    <li><a href="contact.html" class="nav-cta">Kontakt</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Meni">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-shapes">
+    <div class="hero-shape"></div>
+    <div class="hero-shape"></div>
+    <div class="hero-shape"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">Pouzdani partner od 2005.</div>
+      <h1>Vaš pouzdan partner u <em>poljoprivredi</em></h1>
+      <p class="hero-desc">
+        Sve što vam treba za uspješnu sjetvu, uzgoj i berbu – gnojiva, sjemena, pesticidi, mehanizacija i stočna hrana na jednom mjestu.
+      </p>
+      <div class="hero-actions">
+        <a href="products.html" class="btn-yellow">Pogledaj proizvode →</a>
+        <a href="contact.html" class="btn-secondary" style="color:rgba(255,255,255,0.85);border-color:rgba(255,255,255,0.35);">Kontaktirajte nas</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">500+</div>
+          <div class="hero-stat-label">Zadovoljnih kupaca</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">8</div>
+          <div class="hero-stat-label">Kategorija proizvoda</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">20+</div>
+          <div class="hero-stat-label">Godina iskustva</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card">
+        <div class="hero-card-icon">🌾</div>
+        <div>
+          <div class="hero-card-label">Sezonska ponuda</div>
+          <div class="hero-card-value">Proljetna sjemena dostupna</div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🚜</div>
+        <div class="hero-card-label">Mehanizacija</div>
+        <div class="hero-card-value">Novo u ponudi</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">💧</div>
+        <div class="hero-card-label">Navodnjavanje</div>
+        <div class="hero-card-value">Sistemi po mjeri</div>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🌿</div>
+        <div class="hero-card-label">Gnojiva</div>
+        <div class="hero-card-value">Certifikovana kvaliteta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee">
+    <span class="marquee-item"><span class="marquee-dot"></span> Gnojiva</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Sjemena</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Pesticidi</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Navodnjavanje</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Stočna hrana</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Žitarice</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Sadnice</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Mehanizacija</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Gnojiva</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Sjemena</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Pesticidi</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Navodnjavanje</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Stočna hrana</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Žitarice</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Sadnice</span>
+    <span class="marquee-item"><span class="marquee-dot"></span> Mehanizacija</span>
+  </div>
+</div>
+
+<!-- PRODUCTS OVERVIEW -->
+<section class="products-section">
+  <div class="products-header">
+    <div>
+      <span class="section-label">Naša ponuda</span>
+      <h2 class="section-title">Sve za vašu <span>poljoprivredu</span></h2>
+    </div>
+    <a href="products.html" class="btn-secondary">Svi proizvodi →</a>
+  </div>
+  <div class="products-grid">
+    <a href="products.html" class="product-card">
+      <span class="product-icon">🌱</span>
+      <div class="product-name">Gnojiva</div>
+      <p class="product-desc">Mineralna i organska gnojiva za maksimalne prinose</p>
+    </a>
+    <a href="products.html" class="product-card">
+      <span class="product-icon">🌾</span>
+      <div class="product-name">Sjemena</div>
+      <p class="product-desc">Certificirano sjeme visokog klijavosti za sve kulture</p>
+    </a>
+    <a href="products.html" class="product-card">
+      <span class="product-icon">🧪</span>
+      <div class="product-name">Pesticidi</div>
+      <p class="product-desc">Efikasna zaštita usjeva od bolesti i štetočina</p>
+    </a>
+    <a href="products.html" class="product-card">
+      <span class="product-icon">💧</span>
+      <div class="product-name">Navodnjavanje</div>
+      <p class="product-desc">Moderni sistemi kapljičnog i površinskog navodnjavanja</p>
+    </a>
+    <a href="products.html" class="product-card">
+      <span class="product-icon">🐄</span>
+      <div class="product-name">Stočna hrana</div>
+      <p class="product-desc">Nutritivno uravnotežena hrana za sve vrste stoke</p>
+    </a>
+    <a href="products.html" class="product-card">
+      <span class="product-icon">🌽</span>
+      <div class="product-name">Žitarice</div>
+      <p class="product-desc">Otkup i prodaja pšenice, kukuruza, ječma i soje</p>
+    </a>
+    <a href="products.html" class="product-card">
+      <span class="product-icon">🌿</span>
+      <div class="product-name">Sadnice</div>
+      <p class="product-desc">Voćne i povrtne sadnice vrhunske kvalitete</p>
+    </a>
+    <a href="products.html" class="product-card">
+      <span class="product-icon">🚜</span>
+      <div class="product-name">Mehanizacija</div>
+      <p class="product-desc">Traktori, prikolice i priključne mašine za farme</p>
+    </a>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section">
+  <div class="why-inner">
+    <div class="why-header">
+      <span class="section-label">Zašto ZP Trade?</span>
+      <h2 class="section-title">Vrijednosti koje nas <span style="color:var(--yellow)">izdvajaju</span></h2>
+      <p class="section-subtitle">Više od dvije decenije pouzdano opskrbljujemo farmere i poljoprivredna preduzeća svime što im treba.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏆</div>
+        <h3 class="why-title">Kvalitet</h3>
+        <p class="why-text">Svi naši proizvodi prolaze strogu kontrolu kvalitete i posjeduju potrebne certifikate.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💰</div>
+        <h3 class="why-title">Povoljne cijene</h3>
+        <p class="why-text">Direktna saradnja s proizvođačima omogućuje nam konkurentne cijene na tržištu.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🤝</div>
+        <h3 class="why-title">Pouzdanost</h3>
+        <p class="why-text">Dogovorene isporuke uvijek na vrijeme – jer znamo koliko svaki dan u sezoni vrijedi.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📦</div>
+        <h3 class="why-title">Dostupnost</h3>
+        <p class="why-text">Širok asortiman uvijek na zalihama. Narudžbe realizujemo u roku od 24–48 sati.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section>
+  <div class="about-section">
+    <div class="about-image-wrap">
+      <img
+        class="about-img-main"
+        src="https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=800&q=80"
+        alt="ZP Trade poljoprivredni tim"
+        loading="lazy"
+      >
+      <div class="about-img-badge">
+        <div class="num">20+</div>
+        <div class="lbl">Godina iskustva</div>
+      </div>
+    </div>
+    <div>
+      <span class="section-label">O kompaniji</span>
+      <h2 class="section-title">Vaš partner od <span>polja do stola</span></h2>
+      <p class="section-subtitle">ZP Trade je osnovano s jasnom misijom – učiniti kvalitetne poljoprivredne inpute dostupnim svim farmerima, bez obzira na veličinu gazdinstava.</p>
+      <div class="about-points">
+        <div class="about-point">Certificirani uvoznik i distributer agro-inputa</div>
+        <div class="about-point">Stručni savjetnici za sve aspekte biljne i stočarske proizvodnje</div>
+        <div class="about-point">Brza dostava širom regiona</div>
+        <div class="about-point">Individualni pristup svakom klijentu</div>
+      </div>
+      <a href="about.html" class="btn-primary">Saznajte više o nama →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <span class="section-label">Kontaktirajte nas</span>
+    <h2 class="section-title">Spremi za novu <span style="color:var(--yellow)">sezonu?</span></h2>
+    <p>Pošaljite upit ili nas pozovite – naš tim će vam pomoći odabrati pravo rješenje za vaše gazdinstvo.</p>
+    <div class="cta-actions">
+      <a href="contact.html" class="btn-yellow">Pošalji upit →</a>
+      <a href="products.html" class="btn-secondary" style="color:rgba(255,255,255,0.85);border-color:rgba(255,255,255,0.35);">Pogledaj katalog</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+        <div class="nav-logo-icon">🌿</div>
+        <span class="nav-logo-text">ZP <span>Trade</span></span>
+      </a>
+      <p>Vaš pouzdan partner u poljoprivredi. Kvalitetni agro-inputi i stručni savjeti za svako gazdinstvo.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigacija</h4>
+      <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="products.html">Proizvodi</a></li>
+        <li><a href="about.html">O nama</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Proizvodi</h4>
+      <ul>
+        <li><a href="products.html">Gnojiva</a></li>
+        <li><a href="products.html">Sjemena</a></li>
+        <li><a href="products.html">Pesticidi</a></li>
+        <li><a href="products.html">Mehanizacija</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <div class="footer-contact-item"><span class="icon">📍</span> Ul. Poljoprivredna 12, Sarajevo</div>
+      <div class="footer-contact-item"><span class="icon">📞</span> +387 33 123 456</div>
+      <div class="footer-contact-item"><span class="icon">✉️</span> info@zptrade.ba</div>
+      <div class="footer-contact-item"><span class="icon">🕐</span> Pon–Pet: 08:00–17:00</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ZP Trade d.o.o. Sva prava zadržana.</span>
+    <span>Napravljeno s ❤️ za farmere</span>
+  </div>
+</footer>
+
+<script>
+  // Hamburger
+  const ham = document.getElementById('hamburger');
+  const nav = document.getElementById('navLinks');
+  ham.addEventListener('click', () => {
+    nav.classList.toggle('open');
+    ham.classList.toggle('active');
+  });
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.product-card, .why-card').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease, border-color 0.35s, box-shadow 0.35s';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>

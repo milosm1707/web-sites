@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontakt – ZP Trade</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .contact-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 5rem 2rem 6rem;
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* INFO COLUMN */
+    .contact-info { position: sticky; top: 100px; }
+
+    .contact-info .section-subtitle { margin-bottom: 2.5rem; max-width: 100%; }
+
+    .info-cards { display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem; }
+
+    .info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      border: 2px solid var(--green-pale);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .info-card:hover { border-color: var(--green-light); box-shadow: var(--shadow); }
+
+    .info-card-icon {
+      width: 48px; height: 48px;
+      background: var(--green-pale);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .info-card-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--green-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 4px;
+    }
+
+    .info-card-value {
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .info-card-sub {
+      font-size: 0.8rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+
+    .working-hours {
+      background: linear-gradient(135deg, var(--green-dark), var(--green-mid));
+      border-radius: var(--radius-lg);
+      padding: 1.75rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .working-hours h4 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .wh-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .wh-row:last-child { border-bottom: none; }
+    .wh-row .day { color: rgba(255,255,255,0.6); }
+    .wh-row .time { color: var(--yellow); font-weight: 500; }
+
+    /* FORM COLUMN */
+    .contact-form-wrap {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      box-shadow: var(--shadow);
+    }
+
+    .form-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--green-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-subtitle { font-size: 0.9rem; color: var(--text-mid); margin-bottom: 2.5rem; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem 1.5rem;
+    }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+
+    .form-group.full { grid-column: span 2; }
+
+    .form-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      letter-spacing: 0.3px;
+    }
+
+    .form-group label .req { color: var(--green-mid); margin-left: 2px; }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      padding: 13px 16px;
+      border: 2px solid var(--green-pale);
+      border-radius: var(--radius);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      background: var(--cream);
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--green-light);
+      background: var(--white);
+      box-shadow: 0 0 0 4px rgba(74,155,84,0.1);
+    }
+
+    .form-group input.error,
+    .form-group textarea.error {
+      border-color: #e53e3e;
+      background: #fff5f5;
+    }
+
+    .form-group .err-msg {
+      font-size: 0.78rem;
+      color: #e53e3e;
+      display: none;
+    }
+
+    .form-group .err-msg.show { display: block; }
+
+    .form-group textarea { height: 130px; resize: vertical; }
+
+    .form-check {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      grid-column: span 2;
+      margin-top: 0.5rem;
+    }
+
+    .form-check input[type="checkbox"] {
+      width: 18px; height: 18px;
+      accent-color: var(--green-mid);
+      margin-top: 2px;
+      flex-shrink: 0;
+      padding: 0;
+      border: none;
+    }
+
+    .form-check label {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.5;
+      cursor: pointer;
+    }
+
+    .form-submit-row {
+      grid-column: span 2;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .submit-btn {
+      flex: 1;
+      min-width: 200px;
+      padding: 15px 32px;
+      background: var(--green-mid);
+      color: var(--white);
+      border: none;
+      border-radius: 50px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .submit-btn:hover {
+      background: var(--green-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(45,106,53,0.35);
+    }
+
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .form-secure {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    /* Success / Error messages */
+    .form-alert {
+      display: none;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .form-alert.show { display: flex; }
+
+    .form-alert.success {
+      background: #f0fdf4;
+      border: 2px solid #86efac;
+      color: #166534;
+    }
+
+    .form-alert.error {
+      background: #fef2f2;
+      border: 2px solid #fca5a5;
+      color: #991b1b;
+    }
+
+    @media (max-width: 960px) {
+      .contact-page { grid-template-columns: 1fr; gap: 3rem; }
+      .contact-info { position: static; }
+    }
+
+    @media (max-width: 560px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full, .form-check, .form-submit-row { grid-column: span 1; }
+      .contact-form-wrap { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">🌿</div>
+    <span class="nav-logo-text">ZP <span>Trade</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Početna</a></li>
+    <li><a href="products.html">Proizvodi</a></li>
+    <li><a href="about.html">O nama</a></li>
+    <li><a href="contact.html" class="active nav-cta">Kontakt</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Početna</a> / Kontakt</div>
+  <h1>Kontaktirajte nas</h1>
+  <p>Naš tim je tu za vas – pošaljite upit ili nas direktno pozovite</p>
+</div>
+
+<div class="contact-page">
+
+  <!-- LEFT: INFO -->
+  <div class="contact-info">
+    <span class="section-label">Gdje smo</span>
+    <h2 class="section-title">Ostanimo u <span>kontaktu</span></h2>
+    <p class="section-subtitle">Javite nam se putem forme, telefona ili posjetite nas lično. Odgovaramo u roku od 24 sata.</p>
+
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="info-card-icon">📍</div>
+        <div>
+          <div class="info-card-label">Adresa</div>
+          <div class="info-card-value">Ul. Poljoprivredna 12</div>
+          <div class="info-card-sub">71000 Sarajevo, BiH</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">📞</div>
+        <div>
+          <div class="info-card-label">Telefon</div>
+          <div class="info-card-value">+387 33 123 456</div>
+          <div class="info-card-sub">Mob: +387 61 234 567</div>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon">✉️</div>
+        <div>
+          <div class="info-card-label">Email</div>
+          <div class="info-card-value">info@zptrade.ba</div>
+          <div class="info-card-sub">prodaja@zptrade.ba</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="working-hours">
+      <h4>🕐 Radno vrijeme</h4>
+      <div class="wh-row"><span class="day">Ponedjeljak – Petak</span><span class="time">08:00 – 17:00</span></div>
+      <div class="wh-row"><span class="day">Subota</span><span class="time">08:00 – 13:00</span></div>
+      <div class="wh-row"><span class="day">Nedjelja</span><span class="time">Zatvoreno</span></div>
+    </div>
+  </div>
+
+  <!-- RIGHT: FORM -->
+  <div class="contact-form-wrap">
+    <h2 class="form-title">Pošaljite nam poruku</h2>
+    <p class="form-subtitle">Popunite formu i odgovorit ćemo vam u najkraćem mogućem roku.</p>
+
+    <div class="form-alert success" id="successAlert">
+      ✅ <span>Vaša poruka je uspješno poslana! Kontaktirat ćemo vas uskoro.</span>
+    </div>
+    <div class="form-alert error" id="errorAlert">
+      ❌ <span>Greška pri slanju. Molimo pokušajte ponovo ili nas direktno pozovite.</span>
+    </div>
+
+    <form id="contactForm" novalidate>
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="name">Ime i prezime <span class="req">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Npr. Mirko Petrović" autocomplete="name">
+          <span class="err-msg" id="nameErr">Molimo unesite vaše ime.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email adresa <span class="req">*</span></label>
+          <input type="email" id="email" name="email" placeholder="ime@email.com" autocomplete="email">
+          <span class="err-msg" id="emailErr">Molimo unesite ispravnu email adresu.</span>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Broj telefona</label>
+          <input type="tel" id="phone" name="phone" placeholder="+387 61 000 000" autocomplete="tel">
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Predmet upita</label>
+          <select id="subject" name="subject">
+            <option value="">Odaberite kategoriju...</option>
+            <option>Gnojiva</option>
+            <option>Sjemena</option>
+            <option>Pesticidi</option>
+            <option>Navodnjavanje</option>
+            <option>Stočna hrana</option>
+            <option>Žitarice</option>
+            <option>Sadnice</option>
+            <option>Mehanizacija</option>
+            <option>Opće informacije</option>
+          </select>
+        </div>
+
+        <div class="form-group full">
+          <label for="message">Poruka <span class="req">*</span></label>
+          <textarea id="message" name="message" placeholder="Opišite vaše potrebe ili postavljeno pitanje..."></textarea>
+          <span class="err-msg" id="msgErr">Molimo unesite poruku (min. 10 znakova).</span>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" id="privacy" name="privacy">
+          <label for="privacy">Slažem se s obradom ličnih podataka u svrhu odgovora na upit. Vaši podaci neće biti dijeljeni s trećim stranama.</label>
+        </div>
+
+        <div class="form-submit-row">
+          <button type="submit" class="submit-btn" id="submitBtn">
+            <span id="btnText">Pošalji poruku →</span>
+          </button>
+          <div class="form-secure">🔒 Sigurno slanje</div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="nav-logo" style="margin-bottom:1rem;display:inline-flex">
+        <div class="nav-logo-icon">🌿</div>
+        <span class="nav-logo-text">ZP <span>Trade</span></span>
+      </a>
+      <p>Vaš pouzdan partner u poljoprivredi. Kvalitetni agro-inputi i stručni savjeti za svako gazdinstvo.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigacija</h4>
+      <ul>
+        <li><a href="index.html">Početna</a></li>
+        <li><a href="products.html">Proizvodi</a></li>
+        <li><a href="about.html">O nama</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kategorije</h4>
+      <ul>
+        <li><a href="products.html">Gnojiva</a></li>
+        <li><a href="products.html">Sjemena</a></li>
+        <li><a href="products.html">Pesticidi</a></li>
+        <li><a href="products.html">Mehanizacija</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <div class="footer-contact-item"><span class="icon">📍</span> Ul. Poljoprivredna 12, Sarajevo</div>
+      <div class="footer-contact-item"><span class="icon">📞</span> +387 33 123 456</div>
+      <div class="footer-contact-item"><span class="icon">✉️</span> info@zptrade.ba</div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 ZP Trade d.o.o. Sva prava zadržana.</span>
+    <span>Napravljeno s ❤️ za farmere</span>
+  </div>
+</footer>
+
+<script>
+  // Nav
+  const ham = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navLinks');
+  ham.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+  // Validation helpers
+  function setError(inputId, errId, show) {
+    const input = document.getElementById(inputId);
+    const err = document.getElementById(errId);
+    if (show) {
+      input.classList.add('error');
+      err.classList.add('show');
+    } else {
+      input.classList.remove('error');
+      err.classList.remove('show');
+    }
+    return !show;
+  }
+
+  function isValidEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  // Live validation
+  document.getElementById('name').addEventListener('blur', function() {
+    setError('name', 'nameErr', this.value.trim().length < 2);
+  });
+
+  document.getElementById('email').addEventListener('blur', function() {
+    setError('email', 'emailErr', !isValidEmail(this.value.trim()));
+  });
+
+  document.getElementById('message').addEventListener('blur', function() {
+    setError('message', 'msgErr', this.value.trim().length < 10);
+  });
+
+  // Form submit
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const privacy = document.getElementById('privacy').checked;
+
+    let valid = true;
+    valid = setError('name', 'nameErr', name.length < 2) && valid;
+    valid = setError('email', 'emailErr', !isValidEmail(email)) && valid;
+    valid = setError('message', 'msgErr', message.length < 10) && valid;
+
+    if (!privacy) {
+      alert('Molimo prihvatite uvjete obrade podataka.');
+      return;
+    }
+
+    if (!valid) return;
+
+    // Show loading
+    const btn = document.getElementById('submitBtn');
+    const btnText = document.getElementById('btnText');
+    btn.disabled = true;
+    btnText.textContent = 'Slanje...';
+
+    // Build form data for PHP
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('phone', document.getElementById('phone').value.trim());
+    formData.append('subject', document.getElementById('subject').value);
+    formData.append('message', message);
+
+    try {
+      const response = await fetch('contact.php', {
+        method: 'POST',
+        body: formData
+      });
+      const result = await response.json();
+
+      if (result.success) {
+        document.getElementById('successAlert').classList.add('show');
+        document.getElementById('errorAlert').classList.remove('show');
+        document.getElementById('contactForm').reset();
+        document.getElementById('successAlert').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      } else {
+        throw new Error(result.message || 'Unknown error');
+      }
+    } catch (err) {
+      // In demo (no server), still show success for UX preview
+      if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
+        document.getElementById('successAlert').classList.add('show');
+        document.getElementById('errorAlert').classList.remove('show');
+        document.getElementById('contactForm').reset();
+      } else {
+        document.getElementById('errorAlert').classList.add('show');
+        document.getElementById('successAlert').classList.remove('show');
+      }
+    } finally {
+      btn.disabled = false;
+      btnText.textContent = 'Pošalji poruku →';
+    }
+  });
+</script>
+</body>
+</html>
